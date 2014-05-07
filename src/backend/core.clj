@@ -8,13 +8,6 @@
             [backend.routes.home :refer [home-routes]]
             [backend.data.employee :as data]))
 
-(defn init []
-  (data/create-table "employees"))
-
-(defn destroy []
-  (println "backend is shutting down"))
-
-
 (defroutes app-routes
   (ANY "/employee/:id" [id] (employee id))
   (route/resources "/")
