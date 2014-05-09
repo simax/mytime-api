@@ -3,8 +3,11 @@
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :profiles {:user {:dependencies [[lein-lobos "1.0.0-beta1"]]}}
   :dependencies [[org.clojure/clojure "1.5.1"]
-                 [lobos "1.0.0-beta1"]
                  [korma "0.3.0-RC5"]
-                 [postgresql/postgresql "9.1-901.jdbc4"]])
+                 [postgresql/postgresql "9.3-1100-jdbc4"]]
+  :clj-sql-up {:database {:subprotocol "postgresql"
+                          :subname "mytime"
+                          :user "simonlomax"
+                          :password "nomisxamol"}
+               :deps [[org.postgresql/postgresql "9.3-1100-jdbc4"]]})
