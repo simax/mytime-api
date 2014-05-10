@@ -1,7 +1,7 @@
-(ns backend.test.handler
+(ns api.test.handler
   (:use clojure.test
         ring.mock.request
-        backend.handler))
+        api.handler))
 
 (deftest test-app
   (testing "main route"

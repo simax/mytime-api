@@ -5,8 +5,11 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [korma "0.3.0-RC5"]
-                 [postgresql/postgresql "9.3-1100-jdbc4"]
-                 [liberator "0.11.0"]]
+                 [org.postgresql/postgresql "9.3-1100-jdbc4"]
+                 [liberator "0.11.0"]
+                 [ring "1.2.2"]
+                 [cheshire "5.3.1"]]
+  :ring {:handler api.core/app}
   :clj-sql-up {:database {:subprotocol "postgresql"
                           :subname "mytime"
                           :user "simonlomax"
