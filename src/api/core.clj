@@ -6,10 +6,12 @@
             [compojure.handler :as handler]
             [compojure.route :as route]
             [compojure.core :refer [defroutes ANY]]
-            [api.resources.departments :as departments]))
+            [api.resources :refer :all]))
+
 
 (defroutes app-routes
-  (ANY "/departments"  [] (departments/get-departments))
+  (ANY "/departments"  [] (get-departments))
+  (ANY "/employees"  [] (get-employees))
   ;;(ANY "/employee/:id" [id] (employees/get-by-id id))
   (route/resources "/")
   (route/not-found "Not Found"))

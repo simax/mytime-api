@@ -1,4 +1,4 @@
-(ns api.data.departments
+(ns api.data.employees
   (:require [cheshire.core :as json]
             [korma.db :refer :all]
             [korma.core :refer :all]
@@ -12,4 +12,4 @@
 ;    {:id 3, :name "Design"}
 ;    {:id 4, :name "Customer Support"}]
 
-   (select departments)))
+   (select employees)))

@@ -1,6 +1,6 @@
-(ns api.resources.departments
+(ns api.resources
   (:require [liberator.core :refer [resource defresource]]
-            [api.data.departments :as data]))
+            [api.data.departments :as departments]))
 
 
 (defresource get-departments []
@@ -8,5 +8,5 @@
                           "application/json"]
 
   :exists? (fn [ctx]
-              {::departments (data/get-all)})
+              {::departments (departments/get-all)})
   :handle-ok ::departments)
