@@ -6,6 +6,12 @@
 (defdb db (postgres {:db "mytime"
                      :user "simonlomax"
                      :password "nomisxamol"}))
+(declare departments)
 
-(defentity departments)
-(defentity employees)
+(defentity employees
+  ;(entity-fields :id :firstname :lastname :email :startdate :enddate :active)
+  (belongs-to departments))
+
+(defentity departments
+  (has-many employees))
+

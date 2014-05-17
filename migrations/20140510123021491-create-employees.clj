@@ -8,7 +8,7 @@
                             startdate date null,
                             enddate date null,
                             active boolean DEFAULT true,
-                            departmentid integer references departments(id) ON DELETE CASCADE,
+                            departments_id integer references departments(id) ON DELETE CASCADE,
                             managerid integer references employees(id) null)"])
 
 (defn down []

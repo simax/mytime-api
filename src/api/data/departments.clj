@@ -12,4 +12,4 @@
 ;    {:id 3, :name "Design"}
 ;    {:id 4, :name "Customer Support"}]
 
-   (select departments)))
+   (select departments (with employees))))
