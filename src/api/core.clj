@@ -5,16 +5,17 @@
             [hiccup.middleware :refer [wrap-base-url]]
             [compojure.handler :as handler]
             [compojure.route :as route]
-            [compojure.core :refer [defroutes ANY]]
+            [compojure.core :refer [defroutes context ANY]]
             [api.resources :refer :all]))
 
 
 (defroutes app-routes
-  (ANY "/departments"  [] (get-departments))
-  (ANY "/employees"  [] (get-employees))
-  ;;(ANY "/employee/:id" [id] (employees/get-by-id id))
-  (route/resources "/")
-  (route/not-found "Not Found"))
+  (context "/api" []
+    (ANY "/departments"  [] (get-departments))
+    (ANY "/employees"  [] (get-employees))
+    ;;(ANY "/employee/:id" [id] (employees/get-by-id id))
+    (route/resources "/")
+    (route/not-found "Not Found")))
 
 (def app
   (-> (routes app-routes)
